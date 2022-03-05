@@ -1,4 +1,4 @@
-package mantis.pages;
+package FIS.pages;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ public class PasswordPage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    @FindBy(id = "password")
+    @FindBy(id = "field-password")
     private WebElement passwordField;
 
     public PasswordPage(WebDriver driver) {

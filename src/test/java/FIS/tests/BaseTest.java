@@ -1,9 +1,7 @@
-package mantis.tests;
+package FIS.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import mantis.pages.MantisSite;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -13,12 +11,13 @@ public class BaseTest {
     public WebDriver driver;
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 
-        driver.get("https://academ-it.ru/mantisbt/login_page.php");
+        driver.get("http://nsk-fis-dev.corp.bsv.legal:8080/web/21-07-21_17-39/FormRunner/");
         driver.manage().window().maximize();
+        Thread.sleep(3000);
     }
 
 

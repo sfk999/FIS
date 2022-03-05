@@ -1,4 +1,4 @@
-package mantis.pages;
+package FIS.pages;
 // мой
 
 import org.openqa.selenium.WebDriver;

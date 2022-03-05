@@ -1,16 +1,15 @@
-package mantis.pages;
+package FIS.pages;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class MantisSite {
+public class FISSite {
     private final WebDriver driver;
     private LoginPage loginPage;
     private PasswordPage passwordPage;
     private MainPage mainPage;
     private ReportIssuePage reportIssuePage;
 
-    public MantisSite(WebDriver driver) {
+    public FISSite(WebDriver driver) {
         this.driver = driver;
 
         loginPage = new LoginPage(driver);
@@ -20,10 +19,11 @@ public class MantisSite {
 
     }
 
-    public void login(String login, String password) {
-        loginPage.login(login);
-        passwordPage.login(password);
-    }
+//    public void login(String login, String password) {
+//        loginPage.login(login);
+//        loginPage.login(password);
+//        passwordPage.login(password);
+//    }
 
     public LoginPage getLoginPage() {
         return loginPage;

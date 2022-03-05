@@ -1,4 +1,4 @@
-package mantis.pages;
+package FIS.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +10,7 @@ public class MainPage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    @FindBy(css = "span.user-info")
+    @FindBy(xpath = "//*[@id='MainViewport']/div/div[1]/div[3]/div[4]/div[2]/div/div[1]/div[2]/div[1]")
     private WebElement userName;
 
     @FindBy(css = "a[href='/mantisbt/view_all_bug_page.php']")

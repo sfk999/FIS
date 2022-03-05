@@ -1,5 +1,6 @@
-package mantis.pages;
+package FIS.pages;
 
+import org.apache.hc.core5.util.Asserts;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,8 +12,14 @@ public class LoginPage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    @FindBy(css = "#username")
+    @FindBy(id = "field-login")
     private WebElement loginField;
+
+    @FindBy(id = "field-password")
+    private WebElement passwordField;
+
+    @FindBy(id = "submit")
+    private WebElement submitButton;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -20,11 +27,17 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void login(String login) {
-        driver.get("https://academ-it.ru/mantisbt/login_page.php");
 
+
+
+    public void login(String login, String password) {
+//        driver.get("http://nsk-fis-dev.corp.bsv.legal:8080/web/21-07-21_17-39/FormRunner/");
+//        Assertions
+        loginField.clear();
         loginField.sendKeys(login);
-        loginField.sendKeys(Keys.ENTER);
+        passwordField.sendKeys(password);
+        submitButton.click();
+//        loginField.sendKeys(Keys.ENTER);
     }
 }
 
