@@ -24,14 +24,14 @@ public class ImportPageTests extends BaseTest{
         FISSite.getLoginPage().login("muzhanovskiy", "muzhanovskiy");
 //        Thread.sleep(10000);
         WebDriverWait wait = new WebDriverWait(driver, 30, 500);
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#MainViewport > div > div.VCMTopToolbar > div.systemAuth > div.rightPanel > div.icon22.profile")));
 
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
 
         FISSite.getMainPageFIS().clickOnImportPage();
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
 
         FISSite.getMainPageFIS().clickOnCreateCessionButton();
 
