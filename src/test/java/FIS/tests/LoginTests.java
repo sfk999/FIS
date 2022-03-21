@@ -30,7 +30,7 @@ public class LoginTests extends BaseTest{
     public void successfulLoginTest() throws InterruptedException {
         FISSite = new FISSite(driver);
 
-        FISSite.getLoginPage().login("супервизор", "супервизор");
+        FISSite.getLoginPage().login("muzhanovskiy", "muzhanovskiy");
 //        Thread.sleep(10000);
         WebDriverWait wait = new WebDriverWait(driver, 30, 500);
 

@@ -8,6 +8,7 @@ public class FISSite {
     private PasswordPage passwordPage;
     private MainPage mainPage;
     private ReportIssuePage reportIssuePage;
+    private MainPageFIS mainPageFIS;
 
     public FISSite(WebDriver driver) {
         this.driver = driver;
@@ -16,6 +17,7 @@ public class FISSite {
         passwordPage = new PasswordPage(driver);
         mainPage = new MainPage(driver);
         reportIssuePage = new ReportIssuePage(driver);
+        mainPageFIS = new MainPageFIS(driver);
 
     }
 
@@ -35,6 +37,10 @@ public class FISSite {
 
     public MainPage getMainPage() {
         return mainPage;
+    }
+
+    public MainPageFIS getMainPageFIS() {
+        return mainPageFIS;
     }
 
     public ReportIssuePage getReportIssuePage() {
