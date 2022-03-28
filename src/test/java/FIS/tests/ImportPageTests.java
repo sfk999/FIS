@@ -15,18 +15,17 @@ public class ImportPageTests extends BaseTest{
 // тест для создания цессии и загрузки цессии
 //  лучше добавить implicitly wait для тестов
     @Test
-    public void successfulLoginTest() throws InterruptedException {
-
-
+    public void successfullImportTest() throws InterruptedException {
 
         FISSite = new FISSite(driver);
-
         FISSite.getLoginPage().login("muzhanovskiy", "muzhanovskiy");
+
+
 //        Thread.sleep(10000);
-        WebDriverWait wait = new WebDriverWait(driver, 30, 500);
+//        WebDriverWait wait = new WebDriverWait(driver, 30, 500);
 //        Thread.sleep(5000);
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#MainViewport > div > div.VCMTopToolbar > div.systemAuth > div.rightPanel > div.icon22.profile")));
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#MainViewport > div > div.VCMTopToolbar > div.systemAuth > div.rightPanel > div.icon22.profile")));
 
 //        Thread.sleep(5000);
 

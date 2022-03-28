@@ -1,5 +1,6 @@
 package FIS.tests;
 
+import FIS.pages.FISSite;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,6 +13,9 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     public WebDriver driver;
+    private FISSite FISSite;
+    public BaseTest() {
+    }
 
     @BeforeEach
     public void setUp() throws InterruptedException {
@@ -19,9 +23,15 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 
+
+
         driver.get("http://nsk-fis-dev.corp.bsv.legal:8080/web/21-07-21_17-39/FormRunner/");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+
+
+
 //        Thread.sleep(3000);
     }
 
