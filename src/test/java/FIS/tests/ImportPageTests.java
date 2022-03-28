@@ -13,7 +13,7 @@ import java.time.Duration;
 public class ImportPageTests extends BaseTest{
     private FISSite FISSite;
 // тест для создания цессии и загрузки цессии
-//  лучше добавить implicitly wait для тестов
+//  лучше добавить implicitly wait для тестов.
     @Test
     public void successfullImportTest() throws InterruptedException {
 
