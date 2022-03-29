@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -32,7 +33,7 @@ public class ImportPageTests extends BaseTest{
         FISSite.getMainPageFIS().clickOnImportPage();
 //        Thread.sleep(5000);
 
-        FISSite.getMainPageFIS().clickOnCreateCessionButton();
+//        FISSite.getMainPageFIS().clickOnCreateCessionButton();
 
 //        кликает на профиль юзера и проверяет что залогинились
 //        FISSite.getMainPageFIS().clickOnUserProfileButton();
@@ -43,7 +44,13 @@ public class ImportPageTests extends BaseTest{
 //        FISSite.getMainPageFIS().clickOnFormsButton();
 //        Thread.sleep(5000);
 //        FISSite.getMainPageFIS().goToMainInterface();
+        FISSite.getMainPageFIS().doubleClickOnCessionName();
+
+        FISSite.getMainPageFIS().clickOnVkladka();
         Thread.sleep(5000);
+
+
+
 
 
     }
