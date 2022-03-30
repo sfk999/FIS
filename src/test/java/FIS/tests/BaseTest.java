@@ -25,9 +25,12 @@ public class BaseTest {
 
 
 
+
         driver.get("http://nsk-fis-dev.corp.bsv.legal:8080/web/21-07-21_17-39/FormRunner/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+
+
 
 
 

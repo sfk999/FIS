@@ -32,8 +32,14 @@ public class MainPageFIS {
     @FindBy (xpath = "//tr[@data-columns-row-id='84']/td/div/div/span")
     private WebElement cessionName;
 
-    @FindBy (css = "#head_tab_60c215ef1a30f>[class='innerText']")
-    private WebElement vkladkaImport;
+    @FindBy (css = "#head_tab_60c215ef1a30f > div")
+    private WebElement tabImport;
+
+    @FindBy (css = "[data-name='Import_new_file']")
+    private WebElement importNewFileButton;
+
+    @FindBy (css = "[class='jq_attach__button jq_attach__add_button']")
+    private WebElement addFileButton;
 
 
 
@@ -54,6 +60,9 @@ public class MainPageFIS {
     public WebElement getUserProfileButton() {return userProfileButton;}
     public void goToMainInterface() {mainInterfaceButton.click();}
     public void clickOnFormsButton() {formsButton.click();}
+    public void clickOnImportNewFileButton() {importNewFileButton.click();}
     public void doubleClickOnCessionName() {actions.doubleClick(cessionName).perform();}
-    public void clickOnVkladka() {vkladkaImport.click();}
+    public void clickOnTabImport() {tabImport.click();}
+    public WebElement getImportNewFileButton() {return importNewFileButton;}
+    public WebElement getAddFileButton() {return addFileButton;}
 }

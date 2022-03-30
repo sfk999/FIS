@@ -1,15 +1,10 @@
 package FIS.tests;
 
 import FIS.pages.FISSite;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
-import java.time.Duration;
+import java.io.File;
 
 public class ImportPageTests extends BaseTest{
     private FISSite FISSite;
@@ -21,6 +16,26 @@ public class ImportPageTests extends BaseTest{
         FISSite = new FISSite(driver);
         FISSite.getLoginPage().login("muzhanovskiy", "muzhanovskiy");
 
+        FISSite.getMainPageFIS().clickOnImportPage();
+        FISSite.getMainPageFIS().doubleClickOnCessionName();
+        Thread.sleep(3000);
+        FISSite.getMainPageFIS().clickOnTabImport();
+        FISSite.getMainPageFIS().clickOnImportNewFileButton();
+        Thread.sleep(3000);
+
+        File file = new File("src/test/java/FIS/tests/Продажа Авантаж на Сириус (1).xlsx");
+        FISSite.getMainPageFIS().getAddFileButton().sendKeys(file.getAbsolutePath());
+        System.out.println("path is " + file.getAbsolutePath());
+//        uploadPicture.sendKeys(file.getAbsolutePath());
+        Thread.sleep(3000);
+
+
+
+    }
+
+}
+
+
 
 //        Thread.sleep(10000);
 //        WebDriverWait wait = new WebDriverWait(driver, 30, 500);
@@ -30,7 +45,6 @@ public class ImportPageTests extends BaseTest{
 
 //        Thread.sleep(5000);
 
-        FISSite.getMainPageFIS().clickOnImportPage();
 //        Thread.sleep(5000);
 
 //        FISSite.getMainPageFIS().clickOnCreateCessionButton();
@@ -44,15 +58,5 @@ public class ImportPageTests extends BaseTest{
 //        FISSite.getMainPageFIS().clickOnFormsButton();
 //        Thread.sleep(5000);
 //        FISSite.getMainPageFIS().goToMainInterface();
-        FISSite.getMainPageFIS().doubleClickOnCessionName();
-
-        FISSite.getMainPageFIS().clickOnVkladka();
-        Thread.sleep(5000);
-
-
-
-
-
-    }
-
-}
+//          для прокрутки вниз
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", FISSite.getMainPageFIS().getImportNewFileButton());
