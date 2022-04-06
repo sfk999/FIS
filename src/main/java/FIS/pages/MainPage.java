@@ -38,4 +38,9 @@ public class MainPage {
         reportIssuesPageButton.click();
     }
 
+
+
+
+
+
 }

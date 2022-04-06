@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+
 public class MainPageFIS {
     private final WebDriver driver;
     private final WebDriverWait wait;
@@ -65,4 +67,9 @@ public class MainPageFIS {
     public void clickOnTabImport() {tabImport.click();}
     public WebElement getImportNewFileButton() {return importNewFileButton;}
     public WebElement getAddFileButton() {return addFileButton;}
+
+    File file = new File("src/test/java/FIS/tests/Продажа Авантаж на Сириус (1).xlsx");
+    public void tryToAddFile() {getAddFileButton().sendKeys(file.getAbsolutePath());
+
+    }
 }

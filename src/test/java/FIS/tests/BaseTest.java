@@ -17,9 +17,12 @@ public class BaseTest {
     public BaseTest() {
     }
 
+
+
     @BeforeEach
     public void setUp() throws InterruptedException {
 //        WebDriverWait wait = new WebDriverWait(driver, 30,500);
+//        this.FISSite = new FISSite(driver);
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 
@@ -28,7 +31,10 @@ public class BaseTest {
 
         driver.get("http://nsk-fis-dev.corp.bsv.legal:8080/web/21-07-21_17-39/FormRunner/");
         driver.manage().window().maximize();
+
         driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+
+
 
 
 

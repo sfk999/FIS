@@ -9,26 +9,30 @@ import java.io.File;
 public class ImportPageTests extends BaseTest{
     private FISSite FISSite;
 // тест для создания цессии и загрузки цессии
-//  лучше добавить implicitly wait для тестов.
     @Test
     public void successfullImportTest() throws InterruptedException {
 
         FISSite = new FISSite(driver);
         FISSite.getLoginPage().login("muzhanovskiy", "muzhanovskiy");
 
+//        кликает на кнопку форм и выбирает Главный интерфейс
+        FISSite.getMainPageFIS().clickOnFormsButton();
+//        Thread.sleep(2000);
+        FISSite.getMainPageFIS().goToMainInterface();
         FISSite.getMainPageFIS().clickOnImportPage();
         FISSite.getMainPageFIS().doubleClickOnCessionName();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         FISSite.getMainPageFIS().clickOnTabImport();
         FISSite.getMainPageFIS().clickOnImportNewFileButton();
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
 
-        File file = new File("src/test/java/FIS/tests/Продажа Авантаж на Сириус (1).xlsx");
-        FISSite.getMainPageFIS().getAddFileButton().sendKeys(file.getAbsolutePath());
-        System.out.println("path is " + file.getAbsolutePath());
+//        FISSite.getMainPageFIS().getAddFileButton().sendKeys(file.getAbsolutePath());
+         FISSite.getMainPageFIS().tryToAddFile();
+
+
+//        System.out.println("path is " + file.getAbsolutePath());
 //        uploadPicture.sendKeys(file.getAbsolutePath());
         Thread.sleep(3000);
-
 
 
     }
